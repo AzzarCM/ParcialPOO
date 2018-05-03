@@ -5,8 +5,6 @@
  */
 package parcial;
 
-import java.util.ArrayList;
-
 /**
  *
  * @author rodol
@@ -14,36 +12,29 @@ import java.util.ArrayList;
 public class Temporada {
 String codigo;
 Fecha fechaInicio,fechaFin;
-private ArrayList<String> temporada;
 
+    public String getCodigo() {
+        return this.codigo;
+    }
 
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
 
-private void agregarTemporada(String codTemporada){
- temporada = new ArrayList<>();
- temporada.add(codTemporada);   
-}
+    public Fecha getFechaInicio() {
+        return this.fechaInicio;
+    }
 
+    public void setFechaInicio(Fecha fechaInicio) {
+        this.fechaInicio = fechaInicio;
+    }
 
+    public Fecha getFechaFin() {
+        return this.fechaFin;
+    }
 
-private void consultarTemporada(String codTemporada){
-     for(int i = 0; i< temporada.size(); i++){
-         
-     }
-    
-}
-
-private void modificarTemporada(){
-     for(int i = 0; i< temporada.size(); i++){
-         
-     }
-}
-
-private void eliminarTemporada(){
-     for(int i = 0; i< temporada.size(); i++){
-         
-     }
-    
-}
-
+    public void setFechaFin(Fecha fechaFin) {
+        this.fechaFin = fechaFin;
+    }
 
 }
