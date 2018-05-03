@@ -6,7 +6,7 @@
 package parcial;
 
 import java.util.ArrayList;
-import java.until.Scanner;
+import java.util.Scanner;
 
 /**
  *
@@ -51,9 +51,8 @@ public class ModificacionHuesped {
     public void eliminarhuesped(int Dui, Habitacion hab){
         for(Huesped user : Huesp){
             if(Integer.toString(user.getDUI()).equals(Integer.toString(Dui))){
-                if()
                Huesp.remove(user);
-               Habitacion.setEstado(true);
+               hab.setEstado(true);
             }
             
         }
