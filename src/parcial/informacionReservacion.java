@@ -66,18 +66,42 @@ public class informacionReservacion {
         }
     }
     
-    public void modidicarHabitacion(String Habitacion){
+    public void modidicarHabitacion(Habitacion habitacion){
         
-        String nuevaHabitacion;
+        int opcion = 4;
         
-        for(int i=0; i<infoReserv.size(); i++){
-          
-            if(infoReserv.get(i).getHabitacion().equals(Habitacion)){
-                System.out.println("Ingrese la nueva habitacion para el cliente");
-               nuevaHabitacion = read.nextLine();
-               
-               
-               infoReserv.get(i).setHabitacion(nuevaHabitacion);
+        while(opcion!=3){
+            
+            System.out.println("Que desea hacer? ");
+            System.out.println("1- cambiar habitacion");
+            System.out.println("2- cambiar fecha");
+            System.out.println("3- salir");
+            opcion = read.nextInt();
+            
+            switch (opcion) {
+
+                case 1:
+                    String nuevaHabitacion;
+                    
+                    if(infoReserv.get(i).habitacion.getEstado){
+                        
+                        
+                    for (int i = 0; i < infoReserv.size(); i++) {
+
+                        if (infoReserv.get(i).getHabitacion().equals(Habitacion)) {
+                            System.out.println("Ingrese la nueva habitacion para el cliente");
+                            nuevaHabitacion = read.nextLine();
+
+                            infoReserv.get(i).setHabitacion(nuevaHabitacion);
+
+                        }
+                        
+                    }
+
+
+        }
+        
+        
                
                
             }
