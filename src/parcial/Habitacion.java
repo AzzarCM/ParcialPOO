@@ -17,6 +17,11 @@ public class Habitacion {
     public Habitacion(boolean estado, int numero){
         this.estado = estado;
         this.numero = numero;
+        
+        //verificamos el tipo de habitacion que es DOBLE O SENCILLA
+        
+        this.tipo = (numero%2)==0 ? "Doble":"Sencilla";
+        
     
     }
 
