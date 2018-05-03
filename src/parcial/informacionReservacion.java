@@ -75,7 +75,10 @@ public class informacionReservacion {
             if(infoReserv.get(i).getHabitacion().equals(Habitacion)){
                 System.out.println("Ingrese la nueva habitacion para el cliente");
                nuevaHabitacion = read.nextLine();
+               
+               
                infoReserv.get(i).setHabitacion(nuevaHabitacion);
+               
                
             }
             
