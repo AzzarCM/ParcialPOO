@@ -6,6 +6,7 @@
 package parcial;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 /**
  *
@@ -14,49 +15,52 @@ import java.util.ArrayList;
 public class Paquetes {
     String idPaquete, codeTemporada;
     float precio;
-    private ArrayList<ArrayList<String>>  paqPrinc;
-    private ArrayList<String>  paq;
-    private ArrayList<String>  paq2;
-    private ArrayList<String>  paq_new;
-    
+    private ArrayList<Paq>  paquetes;
+    ArrayList<String> servicios;
+    Scanner lectura = new Scanner(System.in);
+
+
+
     public Paquetes(){
-        paq = new ArrayList<>();
-        paq2 = new ArrayList<>();
-        
-        paqPrinc = new ArrayList<>();
-        paq.add("Basico");
-        paq.add("10");
-        paq2.add("Premium");
-        paq2.add("150");
-        paqPrinc.add(paq);
-        paqPrinc.add(paq2);
-        
+        paquetes = new ArrayList<>(); 
+        servicios = new ArrayList<>();
     }
  
-    private void agregarPaquete(String nombrePaq, int PrecioPaq){
-        paq_new = new ArrayList<>();
-        paq_new.add(nombrePaq);
-        paq_new.add(Integer.toString(PrecioPaq));
-        paqPrinc.add(paq_new);
- 
+    private void agregarPaquete(){
+        Paq nuevo_paq = new Paq();
+        System.out.println("Ingrese el nombre del paquete: ");
+        nuevo_paq.setNombrePaquete(lectura.nextLine());
+        System.out.println("Ingrese el precio del paquete: ");
+        nuevo_paq.setPrecioPaquete(lectura.nextInt());
+        while(true){
+            System.out.println("Ingrese el nombre del paquete: ");
+            servicios.add(lectura.nextLine());
+            System.out.println("Agregara mas servicios al paquete? Y/N");
+            if(lectura.nextLine().equals('Y')){
+                break;
+            }
+        }
+        nuevo_paq.setServicioPaquete(servicios);
     }
     
-    private void modificarPrecio(String nombrePaq, int newPrice){
-        for(int i = 0; i<paqPrinc.size(); i++){
-            ArrayList referen = (ArrayList) paqPrinc.get(i);
-            for(int j = 0; j<referen.size()-1; j++){
-                if(nombrePaq.equals(referen.get(j))){
-                    referen.set(1, newPrice);
-                    break;
-                }
+    private void modificarPrecio(String nombrePaq){
+        for(Paq temp: paquetes){
+            if(temp.getNombrePaquete().equals(nombrePaq)){
+                System.out.println("Ingrese el nuevo precio: ");
+                temp.setPrecioPaquete(lectura.nextInt());
             }
-            break;
         }
     }
     
-    private void eliminarPrecio(){
-        
+    public void eliminarPaquete(String nombrePaq){
+        for(Paq temp: paquetes){
+            if(temp.getNombrePaquete().equals(nombrePaq)){
+                paquetes.remove(temp);
+                break;
+            }
+        }
     }
+    
     
     
     
