@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package parcial;
-import java.util.ArrayList;
 /**
  *
  * @author Margarita
