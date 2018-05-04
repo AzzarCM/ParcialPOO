@@ -10,7 +10,7 @@ package parcial;
  * @author rodol
  */
 public class Fecha {
-    int dia, mes, anio;
+    int dia, mes;
 
     public int getDia() {
         return this.dia;
@@ -28,13 +28,6 @@ public class Fecha {
         this.mes = mes;
     }
 
-    public int getAnio() {
-        return this.anio;
-    }
-
-    public void setAnio(int anio) {
-        this.anio = anio;
-    }
     
     
     

@@ -10,9 +10,17 @@ package parcial;
  * @author rodol
  */
 public class Temporada {
-String codigo;
+String codigo, nombre;
 Fecha fechaInicio,fechaFin;
 
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+    
     public String getCodigo() {
         return this.codigo;
     }
