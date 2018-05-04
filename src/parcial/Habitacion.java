@@ -40,6 +40,15 @@ public class Habitacion {
     public void setNumero(int numero) {
         this.numero = numero;
     }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+    
     
     
     
