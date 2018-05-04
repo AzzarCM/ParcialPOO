@@ -57,9 +57,5 @@ public class ModificacionHuesped {
             
         }
     }
-    
-    public void consultarreserva(Nombre nombre,int Dui){
-        
-    }
+            
 }
-
