@@ -18,9 +18,7 @@ public class Paq {
     public ArrayList<String> servicioPaquete;
 
     
-    public Paq(){
-        Servicio server = new Servicio();
-    }
+    public Paq(){}
     
     public Paq(String nombrePaquete, int precioPaquete, ArrayList<String> servicioPaquete){
         this.nombrePaquete = nombrePaquete;
@@ -51,7 +49,5 @@ public class Paq {
     public void setServicioPaquete(ArrayList<String> servicioPaquete) {
         this.servicioPaquete = servicioPaquete;
     }
-    
-    
-   
+
 }
