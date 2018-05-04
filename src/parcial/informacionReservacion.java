@@ -19,6 +19,7 @@ public class informacionReservacion {
     
     private ArrayList<Reservacion> infoReserv;
     Scanner read = new Scanner(System.in);
+    Fecha nuevaFecha = new Fecha();
     public informacionReservacion(){
         infoReserv = new ArrayList<>();
     }
@@ -53,10 +54,10 @@ public class informacionReservacion {
         lista.setHabitacion(read.nextLine());
         
         System.out.println("Ingrese la fecha de entrada del cliente por favor: \n");
-        lista.setFechaEntrada(read.nextLine());
+        lista.setFechaEntrada(Integer.parseInt(read.nextLine()));
         
         System.out.println("Ingrese la fecha de salidad del cliente por favor: \n");
-        lista.setFechaSalida(read.nextLine());
+        lista.setFechaSalida(Integer.parseInt(read.nextLine()));
         
         System.out.println("Ingrese el numero de tarjeta de credito del cliente \n");
         lista.setNumeroTarjeta(read.nextLine());
@@ -117,22 +118,20 @@ public class informacionReservacion {
                         }
                 case 2:
                     
-                    Fecha nuevaFecha = new Fecha();
+                    Reservacion lis = new Reservacion();
                     
                     for(int i = 0; i < infoReserv.size(); i++){
                         
                         if(infoReserv.contains(habitacion) && habitacion.getEstado()){
+                           
                             
-                            //AQUI QUIERO AGREGAR LA NUEVA FECHA PERO NO PUEDO XD
-                            
-                            infoReserv.add(nuevaFecha);
+                            lis.setFechaEntrada(Integer.parseInt(nuevaFecha.toString()));
                 
                             System.out.println("Ingrese el nuevo Dia \n");
                             nuevaFecha.setDia(Integer.parseInt(read.nextLine()));
                             System.out.println("Ingrese el nuevo mes \n ");
                             nuevaFecha.setMes(Integer.parseInt(read.nextLine()));
-                            System.out.println("Ingrese el nuevo anio\n");
-                            nuevaFecha.setAnio(Integer.parseInt(read.nextLine()));
+                        
                          
                       
                         }
