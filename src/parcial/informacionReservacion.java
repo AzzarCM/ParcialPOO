@@ -23,14 +23,28 @@ public class informacionReservacion {
         infoReserv = new ArrayList<>();
     }
     
+    public boolean consultarReservacion(Habitacion hab, Nombre nombre){
+        
+        
+        for(int i=0; i<infoReserv.size(); i++){
+            
+            if(infoReserv.get(i).getHabitacion().equals(hab) && infoReserv.get(i).getIdHuesped().equals(nombre)){
+                
+                return true;
+            }
+          
+        }
+        return false;  
+        
+    }
+    
     public void AgregarReservacion(){
         
         
         Reservacion lista = new Reservacion();
         
         infoReserv.add(lista);
-        System.out.println("Ingrese el nombre del cliente \n");
-        lista.setNombre(read.nextLine());
+        
         
         System.out.println("Ingrese el numero de DUI del cliente \n");
         lista.setIdHuesped(read.nextLine());
@@ -72,7 +86,7 @@ public class informacionReservacion {
         }
     }
     
-    public void modidicarHabitacion(Habitacion habitacion){
+    public void modificarHabitacion(Habitacion habitacion, Fecha fecha){
         
         int opcion = 4;
         while(opcion!=3){
@@ -103,8 +117,29 @@ public class informacionReservacion {
                         }
                 case 2:
                     
-
+                    Fecha nuevaFecha = new Fecha();
+                    
+                    for(int i = 0; i < infoReserv.size(); i++){
+                        
+                        if(infoReserv.contains(habitacion) && habitacion.getEstado()){
+                            
+                            //AQUI QUIERO AGREGAR LA NUEVA FECHA PERO NO PUEDO XD
+                            
+                            infoReserv.add(nuevaFecha);
+                
+                            System.out.println("Ingrese el nuevo Dia \n");
+                            nuevaFecha.setDia(Integer.parseInt(read.nextLine()));
+                            System.out.println("Ingrese el nuevo mes \n ");
+                            nuevaFecha.setMes(Integer.parseInt(read.nextLine()));
+                            System.out.println("Ingrese el nuevo anio\n");
+                            nuevaFecha.setAnio(Integer.parseInt(read.nextLine()));
+                         
+                      
+                        }
                     }
+                   
+                }
+            
         
         
                
@@ -112,6 +147,8 @@ public class informacionReservacion {
             }
             
         }
+    
+    
        
     
     
