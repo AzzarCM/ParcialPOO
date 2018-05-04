@@ -5,7 +5,7 @@
  */
 package parcial;
 
-
+import java.util.ArrayList;
 
 
 /**
@@ -15,13 +15,17 @@ package parcial;
 public class Paq {
     public String nombrePaquete;
     public int precioPaquete;
+    public ArrayList<String> servicioPaquete;
 
     
-    public Paq(){}
+    public Paq(){
+        Servicio server = new Servicio();
+    }
     
-    public Paq(String nombrePaquete, int precioPaquete){
+    public Paq(String nombrePaquete, int precioPaquete, ArrayList<String> servicioPaquete){
         this.nombrePaquete = nombrePaquete;
         this.precioPaquete = precioPaquete;
+        this.servicioPaquete = servicioPaquete;
     }
     
     public String getNombrePaquete(){
@@ -39,5 +43,15 @@ public class Paq {
     public void setPrecioPaquete(int precioPaquete) {
         this.precioPaquete = precioPaquete;
     }
+
+    public ArrayList<String> getServicioPaquete() {
+        return this.servicioPaquete;
+    }
+
+    public void setServicioPaquete(ArrayList<String> servicioPaquete) {
+        this.servicioPaquete = servicioPaquete;
+    }
+    
+    
    
 }
