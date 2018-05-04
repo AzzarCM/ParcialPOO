@@ -17,11 +17,11 @@ public class Reservacion {
     
    
     
-    int idPaquete;
+    int idPaquete,fechaEntrada,fechaSalida;
     double montoTotal;
-    String Habitacion,fechaEntrada,fechaSalida, nombre,idHuesped, numeroTarjeta;
+    String Habitacion, nombre,idHuesped, numeroTarjeta;
     
-    public void Reservacion(String nombre, String fechaEntrada, String numeroTarjeta, double montoTotal, int idPaquete, String Habitacion,
+    public void Reservacion(String nombre, int fechaEntrada, String numeroTarjeta, double montoTotal, int idPaquete, String Habitacion,
             String idHuesped){
         
         this.fechaEntrada = fechaEntrada;
@@ -44,7 +44,7 @@ public class Reservacion {
     
     }
     
-    public void consultarReserva(String Habitacion, String fechaEntrada, String fechaSalida){
+    public void consultarReserva(String Habitacion, int fechaEntrada, int fechaSalida){
         
         this.Habitacion = Habitacion;
         this.fechaEntrada = fechaEntrada;
@@ -76,19 +76,19 @@ public class Reservacion {
         this.idPaquete = idPaquete;
     }
 
-    public String getFechaEntrada() {
+    public int getFechaEntrada() {
         return fechaEntrada;
     }
 
-    public void setFechaEntrada(String fechaEntrada) {
+    public void setFechaEntrada(int fechaEntrada) {
         this.fechaEntrada = fechaEntrada;
     }
 
-    public String getFechaSalida() {
+    public int getFechaSalida() {
         return fechaSalida;
     }
 
-    public void setFechaSalida(String fechaSalida) {
+    public void setFechaSalida(int fechaSalida) {
         this.fechaSalida = fechaSalida;
     }
 
