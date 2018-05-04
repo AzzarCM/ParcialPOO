@@ -9,24 +9,39 @@ package parcial;
  *
  * @author rodol
  */
+
+
+
 public class Fecha {
     int dia, mes;
+    
+    
+    
 
     public int getDia() {
         return this.dia;
     }
+    
 
+    
+    
     public void setDia(int dia) {
         this.dia = dia;
     }
+    
+    
 
     public int getMes() {
         return this.mes;
     }
+    
+    
 
     public void setMes(int mes) {
         this.mes = mes;
     }
+    
+    
 
     
     
