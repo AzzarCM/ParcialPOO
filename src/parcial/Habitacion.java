@@ -13,24 +13,21 @@ public class Habitacion {
     boolean estado,habilitacion;
     int numero;
     String tipo;
-    
-    public Habitacion(boolean estado, int numero){
-        this.estado = estado;
-        this.numero = numero;
-        
-        //verificamos el tipo de habitacion que es DOBLE O SENCILLA
-        
-        this.tipo = (numero%2)==0 ? "Doble":"Sencilla";
-        
-    
-    }
-
+   
     public boolean getEstado() {
         return this.estado;
     }
 
     public void setEstado(boolean estado) {
         this.estado = estado;
+    }
+
+    public boolean getHabilitacion() {
+        return this.habilitacion;
+    }
+
+    public void setHabilitacion(boolean habilitacion) {
+        this.habilitacion = habilitacion;
     }
 
     public int getNumero() {
@@ -42,7 +39,7 @@ public class Habitacion {
     }
 
     public String getTipo() {
-        return tipo;
+        return this.tipo;
     }
 
     public void setTipo(String tipo) {
