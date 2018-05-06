@@ -38,10 +38,12 @@ public class Menu {
     
     public void mostrar(){
         int opcion = 4;
-        int opcionHuesped = 4;
+        int opcionHuesped, opcionReservacion;
         String dato;
         Scanner leer = new Scanner(System.in);
         ModificacionHuesped hues = new ModificacionHuesped();
+        informacionReservacion reserv = new informacionReservacion();
+        String hab;
         
 
         while (opcion != 7) {
@@ -66,11 +68,41 @@ public class Menu {
                                 System.out.println("Bienvendio a Eliminar un Huesped");
                                 hues.eliminarhuesped(opcion, hab);
                                 break;
+                                
+                            default:
+                                System.out.println("Ingrese una opcion valida por favor.. ");
+                                       
                             
                         }
                         
                        
                     case 2:
+                        
+                        System.out.println("-------- BIENVENIDO A RESERVACON ---------");
+                        System.out.println("Que desea hacer? ");
+                        System.out.println("1- Agregar una reservacion ");
+                        System.out.println("2- Eliminar una reservacion ");
+                        System.out.println("3- Ver reservaciones ");
+                        System.out.println("4- Modificar Reservacion ");
+                        System.out.println("5- Consultar Reservacion ");
+                        System.out.println("6- Salir ");
+                        opcionReservacion = leer.nextInt();
+                        switch(opcionReservacion){
+                            case 1:
+                                reserv.AgregarReservacion();
+                                break;
+                            case 2:
+                                reserv.eliminarReservacion(dui);
+                            case 3:
+                                reserv.verReservaciones();
+                            case 4:         
+                                reserv.modificarHabitacion();
+                            case 5:
+                                reserv.consultarReservacion(hab, nombre);
+                                
+                        }
+                       
+                        
                        
                     case 3:
                         
