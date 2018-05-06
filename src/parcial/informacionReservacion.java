@@ -87,8 +87,8 @@ public class informacionReservacion {
         }
     }
     
-    public void modificarHabitacion(Habitacion habitacion, Fecha fecha){
-        
+    public void modificarHabitacion(){
+        int numHab;
         int opcion = 4;
         while(opcion!=3){
             
@@ -102,27 +102,37 @@ public class informacionReservacion {
 
                 case 1:
                     String nuevaHabitacion;
+                    System.out.println("Ingrese el numero de Habitacion: "); 
+                    numHab = read.nextInt();
+                    Habitacion habitacion = new Habitacion(true, numHab); //el numero se lo pedieremos (numero de habitacion)
+                                        
+                    System.out.println("Ingrese la nueva habitacion para el cliente");
+                                
+                    nuevaHabitacion = read.nextLine();
           
                         for (int i = 0; i < infoReserv.size(); i++) {
 
-                            if (infoReserv.get(i).getHabitacion().equals(habitacion) && habitacion.getEstado()) {
-                                System.out.println("Ingrese la nueva habitacion para el cliente");
+                            if (infoReserv.get(i).getHabitacion().equals(nuevaHabitacion) && habitacion.getEstado()) {
                                 
-                                nuevaHabitacion = read.nextLine();
 
                                 infoReserv.get(i).setHabitacion(nuevaHabitacion);
                                 habitacion.setEstado(false);
                                 break;
                             }
+                            
+                            System.out.println("La habitacion ya esta ocupada ");
 
                         }
                 case 2:
                     
                     Reservacion lis = new Reservacion();
+                    System.out.println("Ingrese la habitacion a cambiarle fecha: ");
+                    numHab = read.nextInt();
+                    Habitacion hab = new Habitacion(true, numHab);
                     
                     for(int i = 0; i < infoReserv.size(); i++){
                         
-                        if(infoReserv.contains(habitacion) && habitacion.getEstado()){
+                        if(infoReserv.contains(hab) && hab.getEstado()){
                            
                             
                             lis.setFechaEntrada(Integer.parseInt(nuevaFecha.toString()));
@@ -131,30 +141,9 @@ public class informacionReservacion {
                             nuevaFecha.setDia(Integer.parseInt(read.nextLine()));
                             System.out.println("Ingrese el nuevo mes \n ");
                             nuevaFecha.setMes(Integer.parseInt(read.nextLine()));
-                        
-                         
-                      
                         }
                     }
-                   
-                }
-            
-        
-        
-               
-               
-            }
-            
-        }
-    
-    
-       
-    
-    
-    
-    
-    
-    
-    
-    
+                }     
+            }  
+        }  
 }
