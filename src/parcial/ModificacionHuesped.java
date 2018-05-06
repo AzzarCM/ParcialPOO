@@ -26,7 +26,7 @@ public class ModificacionHuesped {
     
 }
     
-    public void agregarhuesped(Nombre nombre, Verificador Dui){
+    public void agregarhuesped(){
         
         Huesped nuevo = new Huesped();
         Huesp.add(nuevo);
