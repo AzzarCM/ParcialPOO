@@ -38,11 +38,12 @@ public class Menu {
     
     public void mostrar(){
         int opcion = 4;
-        int opcionHuesped, opcionReservacion;
+        int opcionHuesped, opcionReservacion, opcionTemporada;
         String dato;
         Scanner leer = new Scanner(System.in);
         ModificacionHuesped hues = new ModificacionHuesped();
         informacionReservacion reserv = new informacionReservacion();
+        Temporada2 tempo = new Temporada2();
         String hab;
         
 
@@ -51,6 +52,11 @@ public class Menu {
             try {
                 opcion = leer.nextInt();
                 switch (opcion) {
+                    
+                    
+                    
+                    
+                    
                     case 1:
                         System.out.println("------ BIENVENIDO A HUESPED --------");
                         System.out.println("Que desea realizar?  \n");
@@ -70,13 +76,15 @@ public class Menu {
                                 break;
                                 
                             default:
-                                System.out.println("Ingrese una opcion valida por favor.. ");
-                                       
-                            
+                                System.out.println("Ingrese una opcion valida por favor.. ");    
                         }
+                        
+                        
                         
                        
                     case 2:
+                        
+                        
                         
                         System.out.println("-------- BIENVENIDO A RESERVACON ---------");
                         System.out.println("Que desea hacer? ");
@@ -99,12 +107,40 @@ public class Menu {
                                 reserv.modificarHabitacion();
                             case 5:
                                 reserv.consultarReservacion(hab, nombre);
+                               
+                                
                                 
                         }
                        
                         
+                        
+                        
+                        
+                        
                        
                     case 3:
+                        
+                        
+                        System.out.println("-------- BIENVENIDO A TEMPORADA ---------");
+                        System.out.println("Que desea hacer? ");
+                        System.out.println("1- Agregar temporada  ");
+                        System.out.println("2- Consultar temporada ");
+                        System.out.println("3- Modificar temporada ");
+                        System.out.println("4- Elimimar temporada ");
+                        System.out.println("6- Salir ");
+                        opcionTemporada = leer.nextInt();
+                        switch(opcionTemporada){
+                            case 1:
+                                tempo.agregarTemporada();
+                                break;
+                            case 2:
+                                tempo.consultarTemporada(fecha);
+                            case 3:
+                                tempo.modificarTemporada(dato);
+                            case 4:         
+                                tempo.eliminarTemporada(dato);
+                                
+                        }
                         
                     case 4:
                         

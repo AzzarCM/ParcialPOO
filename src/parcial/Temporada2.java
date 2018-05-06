@@ -22,7 +22,7 @@ public class Temporada2 {
     
     
     
-    private void agregarTemporada(){
+    public void agregarTemporada(){
         Temporada tempo = new Temporada();
         while(true){
             System.out.println("Ingrese el codigo de la temporada: ");
@@ -134,7 +134,7 @@ public class Temporada2 {
         }
     }
     
-    private String consultarTemporada(Fecha fecha){
+    public String consultarTemporada(Fecha fecha){
         for(Temporada temp : temporadaList)
             if((fecha.getDia() >= temp.getFechaInicio().dia && fecha.getDia() <= temp.getFechaFin().dia) && (fecha.getMes() >= temp.getFechaInicio().mes && fecha.getMes() <= temp.getFechaFin().mes)){
                 return temp.getCodigo();
@@ -142,7 +142,7 @@ public class Temporada2 {
         return "ERROR";
     }
     
-    private void modificarTemporada(String codigo){
+    public void modificarTemporada(String codigo){
         for(Temporada temp : temporadaList){
             if(codigo.equals(temp.getCodigo())){
                 switch(miniMenu()){
@@ -181,7 +181,7 @@ public class Temporada2 {
             return lectura.nextInt();
     }
     
-    private void eliminarTemporada(String codigo){
+    public void eliminarTemporada(String codigo){
         for(Temporada temp : temporadaList){
             if(codigo.equals(temp.getCodigo())){
                 temporadaList.remove(temp);
