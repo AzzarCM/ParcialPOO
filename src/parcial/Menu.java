@@ -15,9 +15,10 @@ import java.util.Scanner;
 public class Menu {
     
    private static Menu menu;
-    //private ArrayList<String> proveedores;
+   
 
     private Menu() {
+       
     }
 
     public static Menu getInstance() {
@@ -28,7 +29,8 @@ public class Menu {
     }
     
     public void opciones() {
-        System.out.println("-------- Menu --------");
+        System.out.println("------------ Menu ------------");
+        System.out.println("1. Agregar Huesped");
         System.out.println("1. Opciones para modificar Huesped");
         System.out.println("2. Opciones para agregar/modificar reservaciones");
         System.out.println("3. Opciones para agregar/modificar temporada del anio");
@@ -36,13 +38,16 @@ public class Menu {
         System.out.println("5. Salir");
     }
     
+    
     public void mostrar(){
+         Scanner leer = new Scanner(System.in);
         int opcion = 4;
         int opcionHuesped, opcionReservacion, opcionTemporada;
         String dato;
-        Scanner leer = new Scanner(System.in);
+        
         ModificacionHuesped hues = new ModificacionHuesped();
         informacionReservacion reserv = new informacionReservacion();
+        Habilitar_Habitacion room = new Habilitar_Habitacion();
         Temporada2 tempo = new Temporada2();
         String hab;
         
@@ -64,15 +69,15 @@ public class Menu {
                         switch(opcionHuesped){
                             case 1:
                                 System.out.println("Bienvenido a Agregar un huesped");
-                                hues.agregarhuesped(nombre, Dui);
+                                hues.agregarhuesped();
                                 break;
                             case 2:
                                 System.out.println("Bienvendio a Eliminar un Huesped");
-                                hues.eliminarhuesped(opcion, hab);
+                                room.habilitarLiberarHabitacion(hues.eliminarhuesped());
                                 break;
                                 
                             default:
-                                System.out.println("Ingrese una opcion valida por favor.. ");    
+                                System.out.println("Ingrese una opcion valida por favor... ");    
                         }
 
                     case 2:

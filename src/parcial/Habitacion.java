@@ -11,7 +11,7 @@ package parcial;
  */
 public class Habitacion {
     boolean estado,habilitacion;
-    int numero;
+    int numero,id_user;
     String tipo, piso;
    
     public boolean getEstado() {
@@ -22,6 +22,16 @@ public class Habitacion {
         this.estado = estado;
     }
 
+    public int getId_user() {
+        return this.id_user;
+    }
+
+    public void setId_user(int id_user) {
+        this.id_user = id_user;
+    }
+
+    
+    
     public String getPiso() {
         return this.piso;
     }

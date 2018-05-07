@@ -19,6 +19,7 @@ public class ModificacionHuesped {
     Nombre name = new Nombre();
     Scanner lectura = new Scanner(System.in);
     Verificador verfi;
+    Habilitar_Habitacion SearchHab;
     
     public ModificacionHuesped(){
     Huesp = new ArrayList<>();
@@ -48,14 +49,25 @@ public class ModificacionHuesped {
 }
     
    
-    public void eliminarhuesped(int Dui, Habitacion hab){
+    public int eliminarhuesped(){
+        int dui_aux;
+        boolean banderita = true;
+        System.out.println("Ingrese el dui del huesped a eliminar: ");
+        dui_aux = lectura.nextInt();
+        
         for(Huesped user : Huesp){
-            if(Integer.toString(user.getDUI()).equals(Integer.toString(Dui))){
+            if(Integer.toString(user.getDUI()).equals(Integer.toString(dui_aux))){
                Huesp.remove(user);
-               hab.setEstado(true);
+               return dui_aux;
             }
+            banderita = false;
             
         }
+        if(!banderita){
+            System.out.println("No existe el usuario a eliminar");
+            
+        }
+        return 0;
     }
             
 }
