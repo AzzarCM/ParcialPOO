@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author cmundo
+ * @author DavidVallecios
  */
 public class Menu {
     
@@ -52,11 +52,7 @@ public class Menu {
             try {
                 opcion = leer.nextInt();
                 switch (opcion) {
-                    
-                    
-                    
-                    
-                    
+
                     case 1:
                         System.out.println("------ BIENVENIDO A HUESPED --------");
                         System.out.println("Que desea realizar?  \n");
@@ -78,14 +74,9 @@ public class Menu {
                             default:
                                 System.out.println("Ingrese una opcion valida por favor.. ");    
                         }
-                        
-                        
-                        
-                       
+
                     case 2:
-                        
-                        
-                        
+
                         System.out.println("-------- BIENVENIDO A RESERVACON ---------");
                         System.out.println("Que desea hacer? ");
                         System.out.println("1- Agregar una reservacion ");
@@ -107,20 +98,11 @@ public class Menu {
                                 reserv.modificarHabitacion();
                             case 5:
                                 reserv.consultarReservacion(hab, nombre);
-                               
-                                
-                                
+    
                         }
-                       
-                        
-                        
-                        
-                        
-                        
-                       
+
                     case 3:
-                        
-                        
+
                         System.out.println("-------- BIENVENIDO A TEMPORADA ---------");
                         System.out.println("Que desea hacer? ");
                         System.out.println("1- Agregar temporada  ");
@@ -139,9 +121,7 @@ public class Menu {
                                 tempo.modificarTemporada(dato);
                             case 4:         
                                 tempo.eliminarTemporada(dato);
-                                
                         }
-                        
                     case 4:
                         
                     case 5:
