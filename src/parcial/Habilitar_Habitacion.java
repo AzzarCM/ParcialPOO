@@ -109,12 +109,27 @@ public class Habilitar_Habitacion {
         return flag;
     }
  
-    public void habilitarHabitacion(String piso, int numero){
+    public void habilitarHabitacion(String piso, int numeroHab){
         
+        for(ArrayList<Habitacion> auxPiso: pisoList){
+            for(int i = 1; i<11; i++){
+                if((auxPiso.get(i).getNumero() == numeroHab) && (auxPiso.get(i).getPiso().equals(piso))){
+                    auxPiso.get(i).setEstado(false);
+                }
+            }
+            
+        }
     
     }
-    public void deshabilitarHabitacion(String piso, int numero){
-    
+    public void deshabilitarHabitacion(String piso, int numeroHab){
+        for(ArrayList<Habitacion> auxPiso: pisoList){
+            for(int i = 1; i<11; i++){
+                if((auxPiso.get(i).getNumero() == numeroHab) && (auxPiso.get(i).getPiso().equals(piso))){
+                    auxPiso.get(i).setEstado(true);
+                }
+            }
+            
+        }
     }
     public void habilitarPiso(String piso){
     
