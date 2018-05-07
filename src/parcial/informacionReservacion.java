@@ -24,14 +24,16 @@ public class informacionReservacion {
         infoReserv = new ArrayList<>();
     }
     
-    public boolean consultarReservacion(Habitacion hab, String nombre){
-        
+    public boolean consultarReservacion(){
+        int id_user;
+        System.out.println("Ingrese el id del usuario a buscar: ");
+        id_user = read.nextInt();
 
         
         
         for(int i=0; i<infoReserv.size(); i++){
             
-            if(infoReserv.get(i).getHabitacion().equals(hab) && Integer.toString(infoReserv.get(i).getIdHuesped()).equals(nombre)){
+            if(infoReserv.get(i).getIdHuesped() == id_user){
                 
                 return true;
             }
@@ -42,8 +44,7 @@ public class informacionReservacion {
     }
     
     public void AgregarReservacion(){
-        
-        Habitacion nueva = new Habitacion();
+        Habilitar_Habitacion nueva = new Habilitar_Habitacion();
         Reservacion lista = new Reservacion();
         String piso;
         int nHab;
@@ -52,17 +53,15 @@ public class informacionReservacion {
         infoReserv.add(lista);
 
         
-        
-        lista.setIdHuesped(mod_hues.agregarhuesped());
+        int id_aux = mod_hues.agregarhuesped();
+        lista.setIdHuesped(id_aux);
         
         System.out.println("Ingrese la habitacion del cliente \n");
         System.out.println("En que piso lo desea?: ");
         piso = read.nextLine();
-        nueva.setPiso(piso);
         System.out.println("Ingrese el numero de habitacion: ");
         nHab = read.nextInt();
-        nueva.setNumero(nHab);
-        lista.setHabitacion(nueva);
+        lista.setHabitacion(nueva.CrearHabitacion(nHab, piso, id_aux));
         
         System.out.println("Ingrese la fecha de entrada del cliente por favor: \n");
         System.out.println("Ingrese el dia: ");
@@ -87,12 +86,17 @@ public class informacionReservacion {
         
     }
     
-    public void eliminarReservacion(int Dui){
+    public void eliminarReservacion(){
+        Habilitar_Habitacion liberar = new Habilitar_Habitacion();
+        int id_aux;
+        System.out.println("Ingrese el id del usuario a salir: ");
+        id_aux = read.nextInt();
+        
         
         for(int i = 0; i < infoReserv.size(); i++){
-            if(infoReserv.get(i).getIdHuesped() == Dui){
-                
+            if(infoReserv.get(i).getIdHuesped() == id_aux){
                 infoReserv.remove(i);
+                liberar.habilitarLiberarHabitacion(id_aux);
                 
             }
         }
@@ -100,7 +104,7 @@ public class informacionReservacion {
     }
     
     public void verReservaciones(){
-        System.out.println("Las reservaciones que hay para la semana son: ");
+        System.out.println("Las reservaciones que hay son: ");
         
         for(int i = 0; i < infoReserv.size(); i++){
             System.out.println(infoReserv.get(i));
@@ -137,7 +141,7 @@ public class informacionReservacion {
                             if (infoReserv.get(i).getHabitacion().equals(nuevaHabitacion) && habitacion.getEstado()) {
                                 
 
-                                infoReserv.get(i).setHabitacion(nuevaHabitacion);
+                                infoReserv.get(i).getHabitacion().setEstado(true);
                                 habitacion.setEstado(false);
                                 break;
                             }
