@@ -43,8 +43,8 @@ public class Menu {
          Scanner leer = new Scanner(System.in);
         int opcion = 4;
         int opcionHuesped, opcionReservacion, opcionTemporada;
-        String dato;
-        
+        String dato, cod_temp="";
+        Fecha ConsulTemp = new Fecha();
         ModificacionHuesped hues = new ModificacionHuesped();
         informacionReservacion reserv = new informacionReservacion();
         Habilitar_Habitacion room = new Habilitar_Habitacion();
@@ -96,13 +96,13 @@ public class Menu {
                                 reserv.AgregarReservacion();
                                 break;
                             case 2:
-                                reserv.eliminarReservacion(dui);
+                                reserv.eliminarReservacion();
                             case 3:
                                 reserv.verReservaciones();
                             case 4:         
                                 reserv.modificarHabitacion();
                             case 5:
-                                reserv.consultarReservacion(hab, nombre);
+                                reserv.consultarReservacion(nombre);
     
                         }
 
@@ -121,11 +121,11 @@ public class Menu {
                                 tempo.agregarTemporada();
                                 break;
                             case 2:
-                                tempo.consultarTemporada(fecha);
+                                tempo.consultarTemporada(ConsulTemp);
                             case 3:
-                                tempo.modificarTemporada(dato);
+                                tempo.modificarTemporada(cod_temp);
                             case 4:         
-                                tempo.eliminarTemporada(dato);
+                                tempo.eliminarTemporada(cod_temp);
                         }
                     case 4:
                         
