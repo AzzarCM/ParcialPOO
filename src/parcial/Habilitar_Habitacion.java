@@ -109,7 +109,7 @@ public class Habilitar_Habitacion {
         return flag;
     }
  
-    public void habilitarHabitacion(String piso, int numeroHab){
+    public void habilitarLiberarHabitacion(String piso, int numeroHab){
         
         for(ArrayList<Habitacion> auxPiso: pisoList){
             for(int i = 1; i<11; i++){
@@ -121,7 +121,7 @@ public class Habilitar_Habitacion {
         }
     
     }
-    public void deshabilitarHabitacion(String piso, int numeroHab){
+    public void deshabilitarReservarHabitacion(String piso, int numeroHab){
         for(ArrayList<Habitacion> auxPiso: pisoList){
             for(int i = 1; i<11; i++){
                 if((auxPiso.get(i).getNumero() == numeroHab) && (auxPiso.get(i).getPiso().equals(piso))){
@@ -150,8 +150,5 @@ public class Habilitar_Habitacion {
             }
             
         }
-    }
-    public void liberarReserva(String piso, int numero){
-    
     }
 }
