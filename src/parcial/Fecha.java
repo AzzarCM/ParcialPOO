@@ -13,30 +13,28 @@ package parcial;
 
 
 public class Fecha {
-    int dia, mes;
+    int dia, mes, anio;
     
-    
-    
-
     public int getDia() {
         return this.dia;
     }
     
-
-    
-    
     public void setDia(int dia) {
         this.dia = dia;
     }
-    
-    
+
+    public int getAnio() {
+        return this.anio;
+    }
+
+    public void setAnio(int anio) {
+        this.anio = anio;
+    }
 
     public int getMes() {
         return this.mes;
     }
     
-    
-
     public void setMes(int mes) {
         this.mes = mes;
     }

@@ -19,17 +19,19 @@ public class informacionReservacion {
     
     private ArrayList<Reservacion> infoReserv;
     Scanner read = new Scanner(System.in);
-    Fecha nuevaFecha = new Fecha();
+    Fecha nuevaFecha = new Fecha(), fechaAuxEntrada = new Fecha(),fechaAuxSalida = new Fecha();;
     public informacionReservacion(){
         infoReserv = new ArrayList<>();
     }
     
-    public boolean consultarReservacion(Habitacion hab, Nombre nombre){
+    public boolean consultarReservacion(Habitacion hab, String nombre){
+        
+
         
         
         for(int i=0; i<infoReserv.size(); i++){
             
-            if(infoReserv.get(i).getHabitacion().equals(hab) && infoReserv.get(i).getIdHuesped().equals(nombre)){
+            if(infoReserv.get(i).getHabitacion().equals(hab) && Integer.toString(infoReserv.get(i).getIdHuesped()).equals(nombre)){
                 
                 return true;
             }
@@ -43,32 +45,42 @@ public class informacionReservacion {
         
         
         Reservacion lista = new Reservacion();
+        ModificacionHuesped mod_hues = new ModificacionHuesped();
         
         infoReserv.add(lista);
-        
-        
-        System.out.println("Ingrese el numero de DUI del cliente \n");
-        lista.setIdHuesped(read.nextLine());
+
+        lista.setIdHuesped(mod_hues.agregarhuesped());
         
         System.out.println("Ingrese la habitacion del cliente \n");
         lista.setHabitacion(read.nextLine());
         
         System.out.println("Ingrese la fecha de entrada del cliente por favor: \n");
-        lista.setFechaEntrada(Integer.parseInt(read.nextLine()));
+        System.out.println("Ingrese el dia: ");
+        fechaAuxEntrada.setDia(read.nextInt());
+        System.out.println("Ingrese el mes: ");
+        fechaAuxEntrada.setMes(read.nextInt());
+        System.out.println("Ingrese el anio: ");
+        fechaAuxEntrada.setAnio(read.nextInt());
+        lista.setFechaEntrada(fechaAuxEntrada);
         
         System.out.println("Ingrese la fecha de salidad del cliente por favor: \n");
-        lista.setFechaSalida(Integer.parseInt(read.nextLine()));
+        System.out.println("Ingrese el dia: ");
+        fechaAuxSalida.setDia(read.nextInt());
+        System.out.println("Ingrese el mes: ");
+        fechaAuxSalida.setMes(read.nextInt());
+        System.out.println("Ingrese el anio: ");
+        fechaAuxSalida.setAnio(read.nextInt());
+        lista.setFechaSalida(fechaAuxSalida);
         
         System.out.println("Ingrese el numero de tarjeta de credito del cliente \n");
-        lista.setNumeroTarjeta(read.nextLine());
-        
+        lista.setNumeroTarjeta(read.nextInt());
         
     }
     
     public void eliminarReservacion(int Dui){
         
         for(int i = 0; i < infoReserv.size(); i++){
-            if(infoReserv.get(i).getIdHuesped().equals(Dui)){
+            if(infoReserv.get(i).getIdHuesped() == Dui){
                 
                 infoReserv.remove(i);
                 
@@ -104,7 +116,7 @@ public class informacionReservacion {
                     String nuevaHabitacion;
                     System.out.println("Ingrese el numero de Habitacion: "); 
                     numHab = read.nextInt();
-                    Habitacion habitacion = new Habitacion(true, numHab); //el numero se lo pedieremos (numero de habitacion)
+                    Habitacion habitacion = new Habitacion(); //el numero se lo pedieremos (numero de habitacion)
                                         
                     System.out.println("Ingrese la nueva habitacion para el cliente");
                                 
@@ -128,7 +140,7 @@ public class informacionReservacion {
                     Reservacion lis = new Reservacion();
                     System.out.println("Ingrese la habitacion a cambiarle fecha: ");
                     numHab = read.nextInt();
-                    Habitacion hab = new Habitacion(true, numHab);
+                    Habitacion hab = new Habitacion();
                     
                     for(int i = 0; i < infoReserv.size(); i++){
                         

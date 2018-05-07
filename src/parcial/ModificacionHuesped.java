@@ -27,8 +27,8 @@ public class ModificacionHuesped {
     
 }
     
-    public void agregarhuesped(){
-        
+    public int agregarhuesped(){
+        int id_temp;
         Huesped nuevo = new Huesped();
         Huesp.add(nuevo);
         System.out.println("Ingrese Nombres: ");
@@ -38,13 +38,14 @@ public class ModificacionHuesped {
         nuevo.setNombres(name);
         while(true){
             System.out.println("Ingrese DUI: ");
-            int id_temp = lectura.nextInt();
+             id_temp = lectura.nextInt();
             if(verfi.VerificadorTF(id_temp)){
                 nuevo.setDUI(id_temp);
                 break;
             }
         }
         Huesp.add(nuevo);
+        return id_temp;
 
 }
     

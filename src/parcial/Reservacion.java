@@ -17,12 +17,13 @@ public class Reservacion {
     
    
     
-    int idPaquete,fechaEntrada,fechaSalida;
+    int idPaquete,idHuesped, numeroTarjeta;
+    Fecha fechaEntrada,fechaSalida;
     double montoTotal;
-    String Habitacion, nombre,idHuesped, numeroTarjeta;
+    String Habitacion, nombre;
     
-    public void Reservacion(String nombre, int fechaEntrada, String numeroTarjeta, double montoTotal, int idPaquete, String Habitacion,
-            String idHuesped){
+    public void Reservacion(String nombre, Fecha fechaEntrada, int numeroTarjeta, double montoTotal, int idPaquete, String Habitacion,
+            int idHuesped){
         
         this.fechaEntrada = fechaEntrada;
         this.numeroTarjeta = numeroTarjeta;
@@ -44,7 +45,7 @@ public class Reservacion {
     
     }
     
-    public void consultarReserva(String Habitacion, int fechaEntrada, int fechaSalida){
+    public void consultarReserva(String Habitacion, Fecha fechaEntrada, Fecha fechaSalida){
         
         this.Habitacion = Habitacion;
         this.fechaEntrada = fechaEntrada;
@@ -60,11 +61,11 @@ public class Reservacion {
         this.nombre = nombre;
     }
 
-    public String getIdHuesped() {
+    public int getIdHuesped() {
         return idHuesped;
     }
 
-    public void setIdHuesped(String idHuesped) {
+    public void setIdHuesped(int idHuesped) {
         this.idHuesped = idHuesped;
     }
 
@@ -76,27 +77,27 @@ public class Reservacion {
         this.idPaquete = idPaquete;
     }
 
-    public int getFechaEntrada() {
+    public Fecha getFechaEntrada() {
         return fechaEntrada;
     }
 
-    public void setFechaEntrada(int fechaEntrada) {
+    public void setFechaEntrada(Fecha fechaEntrada) {
         this.fechaEntrada = fechaEntrada;
     }
 
-    public int getFechaSalida() {
-        return fechaSalida;
+    public Fecha getFechaSalida() {
+        return this.fechaSalida;
     }
 
-    public void setFechaSalida(int fechaSalida) {
+    public void setFechaSalida(Fecha fechaSalida) {
         this.fechaSalida = fechaSalida;
     }
 
-    public String getNumeroTarjeta() {
+    public int getNumeroTarjeta() {
         return numeroTarjeta;
     }
 
-    public void setNumeroTarjeta(String numeroTarjeta) {
+    public void setNumeroTarjeta(int numeroTarjeta) {
         this.numeroTarjeta = numeroTarjeta;
     }
 
