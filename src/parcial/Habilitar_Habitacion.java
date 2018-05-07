@@ -132,10 +132,24 @@ public class Habilitar_Habitacion {
         }
     }
     public void habilitarPiso(String piso){
-    
+        for(ArrayList<Habitacion> auxPiso: pisoList){
+            for(int i = 1; i<11; i++){
+                if((auxPiso.get(i).getPiso().equals(piso))){
+                    auxPiso.get(i).setEstado(true);
+                }
+            }
+            
+        }
     }
     public void deshabilitarPiso(String piso){
-    
+        for(ArrayList<Habitacion> auxPiso: pisoList){
+            for(int i = 1; i<11; i++){
+                if((auxPiso.get(i).getPiso().equals(piso))){
+                    auxPiso.get(i).setEstado(false);
+                }
+            }
+            
+        }
     }
     public void liberarReserva(String piso, int numero){
     
