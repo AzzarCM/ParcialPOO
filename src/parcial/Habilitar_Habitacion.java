@@ -29,10 +29,10 @@ public class Habilitar_Habitacion {
     }
    
    
-    public Habitacion CrearHabitacion(int indice, String piso){
+    public Habitacion CrearHabitacion(int indice, String piso, int  id_user){
         Habitacion hab = new Habitacion();
+        hab.setId_user(id_user);
         hab.setEstado(true);
-        System.out.println("Ingrese el numero de la habitacion: ");
         hab.setNumero(indice);
         hab.setPiso(piso);
         if(indice%2 == 0){
@@ -73,7 +73,7 @@ public class Habilitar_Habitacion {
             }
         }
         for(int i = 1; i < 11; i++){
-            habList.add(CrearHabitacion(i,pisoAux));
+            habList.add(CrearHabitacion(i,pisoAux, 0));
         }
         pisoList.add(habList);
         
@@ -112,7 +112,7 @@ public class Habilitar_Habitacion {
     public void habilitarLiberarHabitacion(int id_user){
         
         for(ArrayList<Habitacion> auxPiso: pisoList){
-            for(int i = 1; i<11; i++){
+            for(int i = 0; i<10; i++){
                 if((auxPiso.get(i).getId_user() == id_user)){
                     auxPiso.get(i).setEstado(true);
                 }

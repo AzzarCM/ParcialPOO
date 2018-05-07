@@ -89,7 +89,7 @@ public class Menu {
                         System.out.println("3- Ver reservaciones ");
                         System.out.println("4- Modificar Reservacion ");
                         System.out.println("5- Consultar Reservacion ");
-                        System.out.println("6- Salir ");
+                        System.out.println("6- regresar ");
                         opcionReservacion = leer.nextInt();
                         switch(opcionReservacion){
                             case 1:
@@ -102,7 +102,11 @@ public class Menu {
                             case 4:         
                                 reserv.modificarHabitacion();
                             case 5:
-                                reserv.consultarReservacion(nombre);
+                                reserv.consultarReservacion();
+                            case 6:
+                                menu.mostrar();
+                            default:
+                                System.out.println("No se puede");
     
                         }
 
@@ -121,19 +125,25 @@ public class Menu {
                                 tempo.agregarTemporada();
                                 break;
                             case 2:
+                                int dia_temp,mes_temp,anio_temp;
+                                System.out.println("Ingrese la fecha actual: ");
+                                System.out.println("Ingrese el dia: ");
+                                dia_temp = leer.nextInt();
+                                System.out.println("Ingrese el mes: ");
+                                mes_temp = leer.nextInt();
                                 tempo.consultarTemporada(ConsulTemp);
                             case 3:
-                                tempo.modificarTemporada(cod_temp);
-                            case 4:         
-                                tempo.eliminarTemporada(cod_temp);
+                                String cod_tep;
+                                System.out.println("Ingrese el codigo de la temporada: ");
+                                cod_tep = leer.nextLine();
+                                tempo.modificarTemporada(cod_tep);
+                            case 4:
+                                String cod_tem;
+                                System.out.println("Ingrese el codigo de la temporada: ");
+                                cod_tem = leer.nextLine();
+                                tempo.eliminarTemporada(cod_tem);
                         }
-                    case 4:
-                        
-                    case 5:
-                       
-                    case 6:
-                        
-                    case 7:
+                
                         
                     default:
                         System.out.println("Por favor ingrese una opcion valida");

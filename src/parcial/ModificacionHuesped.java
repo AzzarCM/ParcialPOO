@@ -36,14 +36,11 @@ public class ModificacionHuesped {
         System.out.println("Ingrese Apellidos: ");
         name.setApellidos(lectura.nextLine());
         nuevo.setNombres(name);
-        while(true){
-            System.out.println("Ingrese DUI: ");
-             id_temp = lectura.nextInt();
-            if(verfi.VerificadorTF(id_temp)){
-                nuevo.setDUI(id_temp);
-                break;
-            }
-        }
+        System.out.println("Ingrese DUI: ");
+        id_temp = lectura.nextInt();
+        nuevo.setDUI(id_temp);
+
+        
         Huesp.add(nuevo);
         return id_temp;
 
