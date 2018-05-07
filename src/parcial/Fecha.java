@@ -12,7 +12,7 @@ package parcial;
 
 
 
-public class Fecha {
+    public class Fecha {
     int dia, mes, anio;
     
     public int getDia() {

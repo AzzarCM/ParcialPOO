@@ -43,16 +43,26 @@ public class informacionReservacion {
     
     public void AgregarReservacion(){
         
-        
+        Habitacion nueva = new Habitacion();
         Reservacion lista = new Reservacion();
+        String piso;
+        int nHab;
         ModificacionHuesped mod_hues = new ModificacionHuesped();
         
         infoReserv.add(lista);
 
+        
+        
         lista.setIdHuesped(mod_hues.agregarhuesped());
         
         System.out.println("Ingrese la habitacion del cliente \n");
-        lista.setHabitacion(read.nextLine());
+        System.out.println("En que piso lo desea?: ");
+        piso = read.nextLine();
+        nueva.setPiso(piso);
+        System.out.println("Ingrese el numero de habitacion: ");
+        nHab = read.nextInt();
+        nueva.setNumero(nHab);
+        lista.setHabitacion(nueva);
         
         System.out.println("Ingrese la fecha de entrada del cliente por favor: \n");
         System.out.println("Ingrese el dia: ");
@@ -147,7 +157,7 @@ public class informacionReservacion {
                         if(infoReserv.contains(hab) && hab.getEstado()){
                            
                             
-                            lis.setFechaEntrada(Integer.parseInt(nuevaFecha.toString()));
+                            lis.setFechaEntrada(nuevaFecha);
                 
                             System.out.println("Ingrese el nuevo Dia \n");
                             nuevaFecha.setDia(Integer.parseInt(read.nextLine()));
