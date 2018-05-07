@@ -92,7 +92,6 @@ public class informacionReservacion {
         System.out.println("Ingrese el id del usuario a salir: ");
         id_aux = read.nextInt();
         
-        
         for(int i = 0; i < infoReserv.size(); i++){
             if(infoReserv.get(i).getIdHuesped() == id_aux){
                 infoReserv.remove(i);
@@ -105,11 +104,13 @@ public class informacionReservacion {
     
     public void verReservaciones(){
         System.out.println("Las reservaciones que hay son: ");
-        
         for(int i = 0; i < infoReserv.size(); i++){
-            System.out.println(infoReserv.get(i));
-            
-            
+            System.out.println("Numero de Habitacion : ");
+            System.out.println(infoReserv.get(i).getHabitacion().getNumero());
+            System.out.println("Piso : ");
+            System.out.println(infoReserv.get(i).getHabitacion().getPiso());
+            System.out.println("Id Huesped: ");
+            System.out.println(infoReserv.get(i).getIdHuesped());
         }
     }
     

@@ -110,7 +110,7 @@ public class Habilitar_Habitacion {
     }
  
     public void habilitarLiberarHabitacion(int id_user){
-        
+        System.out.println(pisoList.size());
         for(ArrayList<Habitacion> auxPiso: pisoList){
             for(int i = 0; i<10; i++){
                 if((auxPiso.get(i).getId_user() == id_user)){
