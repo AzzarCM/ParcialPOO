@@ -54,9 +54,13 @@ public class Habilitar_Habitacion {
     public void mostrarHab(){
         for(Habitacion hab_aux : habList){
             System.out.println("Habitacion: ");
+            System.out.println("Su Dui es: ");
             System.out.println(hab_aux.getId_user());
+            System.out.println("Su Numero de Habitacion es: ");
             System.out.println(hab_aux.getNumero());
+            System.out.println("Su Tipo de Habitacion es: ");
             System.out.println(hab_aux.getTipo());
+            System.out.println("Su Piso es: ");
             System.out.println(hab_aux.getPiso());
         }
     }

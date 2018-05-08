@@ -9,9 +9,6 @@ package parcial;
  *
  * @author rodol
  */
-
-
-
     public class Fecha {
     int dia, mes, anio;
     
@@ -37,13 +34,5 @@ package parcial;
     
     public void setMes(int mes) {
         this.mes = mes;
-    }
-    
-    
-
-    
-    
-    
-    
-    
+    }    
 }

@@ -124,18 +124,5 @@ public class Reservacion {
 
     public void setMontoTotal(double montoTotal) {
         this.montoTotal = montoTotal;
-    }
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-            
-    
-    
+    } 
 }

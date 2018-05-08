@@ -40,7 +40,6 @@ public class Habitacion {
         this.piso = piso;
     }
 
-    
     public boolean getHabilitacion() {
         return this.habilitacion;
     }

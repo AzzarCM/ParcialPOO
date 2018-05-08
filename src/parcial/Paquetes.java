@@ -18,9 +18,7 @@ public class Paquetes {
     public ArrayList<Paq>  paquetes;
     public ArrayList<String> servicios;
     Scanner lectura = new Scanner(System.in);
-
-
-
+    
     public Paquetes(){
         paquetes = new ArrayList<>(); 
         servicios = new ArrayList<>();
@@ -102,10 +100,5 @@ public class Paquetes {
                 break;
             }
         }
-    }
-    
-    
-    
-    
-    
+    }   
 }

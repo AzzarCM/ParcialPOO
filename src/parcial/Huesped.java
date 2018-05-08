@@ -37,9 +37,6 @@ public class Huesped {
     public void setDUI(int Dui) {
         this.Dui = Dui;
     }
-    
-    
-    
 }
         
     
