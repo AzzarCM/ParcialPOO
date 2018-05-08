@@ -126,8 +126,6 @@ public class Habilitar_Habitacion {
     }
  
     public void habilitarLiberarHabitacion(int id_user){
-        System.out.println("Longitud del array: ");
-        System.out.println(pisoList.size());
         for(ArrayList<Habitacion> auxPiso: pisoList){
             for(int i = 0; i<10; i++){
                 if((auxPiso.get(i).getId_user() == id_user)){
@@ -137,6 +135,26 @@ public class Habilitar_Habitacion {
             
         }
     
+    }
+    
+    public int tipoHabi(int id_user){
+        boolean flag = false;
+        for(ArrayList<Habitacion> auxPiso: pisoList){
+            for(int i = 0; i<10; i++){
+                if((auxPiso.get(i).getId_user() == id_user)){
+                    if(auxPiso.get(i).getPiso().equals("Doble")){
+                        flag = true;
+                    }
+                }
+            }
+            
+        }
+        if(flag){
+            return 250;
+        }
+        else{
+            return 100;
+        }
     }
     public void deshabilitarReservarHabitacion(String piso, int numeroHab){
         for(ArrayList<Habitacion> auxPiso: pisoList){
@@ -160,7 +178,7 @@ public class Habilitar_Habitacion {
             }
         }
         if(flag == 0){
-            return 0.10;
+            return 1.10;
         }
         else{
             return 1;

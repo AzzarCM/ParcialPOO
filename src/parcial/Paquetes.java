@@ -91,6 +91,10 @@ public class Paquetes {
         }
     }
     
+    public Paq PrecioPaquete(int indice){
+        return paquetes.get(indice);
+    }
+    
     public void eliminarPaquete(String nombrePaq){
         for(Paq temp: paquetes){
             if(temp.getNombrePaquete().equals(nombrePaq)){
