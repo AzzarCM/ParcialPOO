@@ -34,7 +34,7 @@ public class Paquetes {
             System.out.println("Ingrese el nombre del servicio: ");
             servicios.add(lectura.nextLine());
             System.out.println("Agregara mas servicios al paquete? Y/N");
-            if(!lectura.nextLine().equals('Y')){
+            if(!(lectura.nextLine().equals('Y'))){
                 break;
             }
         }
