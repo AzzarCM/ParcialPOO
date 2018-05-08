@@ -95,6 +95,7 @@ public class Temporada2 {
     
     
     public void ValidarFechaFin(){
+        banderita = true;
         System.out.println("Ingrese la fecha de fin de temporada: ");
         while(true){
             System.out.println("Ingrese el dia: ");
