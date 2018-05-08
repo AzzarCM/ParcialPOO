@@ -13,19 +13,19 @@ import java.util.Scanner;
  * @author DavidVallecios
  */
 public class Menu {
-    
-   private static Menu menu;
-   
 
-    private Menu(){  
+    private static Menu menu;
+
+    private Menu() {
     }
+
     public static Menu getInstance() {
         if (menu == null) {
             menu = new Menu();
         }
         return menu;
     }
-    
+
     public void opciones() {
         System.out.println("------------ Menu ------------");
         System.out.println("1. Menu de resevaciones");
@@ -33,13 +33,12 @@ public class Menu {
         System.out.println("3. Menu de Paquetes");
         System.out.println("4. Salir");
     }
-    
-    
-    public void mostrar(){
-         Scanner leer = new Scanner(System.in);
+
+    public void mostrar() {
+        Scanner leer = new Scanner(System.in);
         int opcion = 4, precioTotal;
         int opcionHuesped, opcionReservacion, opcionTemporada;
-        String dato, cod_temp="";
+        String dato, cod_temp = "";
         Fecha ConsulTemp = new Fecha();
         ModificacionHuesped hues = new ModificacionHuesped();
         informacionReservacion reserv = new informacionReservacion();
@@ -47,7 +46,6 @@ public class Menu {
         Temporada2 tempo = new Temporada2();
         String hab;
         Paquetes paquetes = new Paquetes();
-        
 
         while (opcion != 7) {
             opciones();
@@ -65,7 +63,7 @@ public class Menu {
                         System.out.println("6- Precio total");
                         System.out.println("7- regresar ");
                         opcionReservacion = leer.nextInt();
-                        switch(opcionReservacion){
+                        switch (opcionReservacion) {
                             case 1:
                                 reserv.AgregarReservacion();
                                 break;
@@ -75,7 +73,7 @@ public class Menu {
                             case 3:
                                 reserv.verReservaciones();
                                 break;
-                            case 4:         
+                            case 4:
                                 reserv.modificarHabitacion();
                                 break;
                             case 5:
@@ -84,7 +82,7 @@ public class Menu {
                             case 6:
                                 System.out.println("Ingrese el id del huesped: ");
                                 reserv.PrecioTotal(leer.nextInt());
-                               break;
+                                break;
                             case 7:
                                 menu.mostrar();
                                 break;
@@ -104,12 +102,14 @@ public class Menu {
                         System.out.println("4- Elimimar temporada ");
                         System.out.println("5- Salir ");
                         opcionTemporada = leer.nextInt();
-                        switch(opcionTemporada){
+                        switch (opcionTemporada) {
                             case 1:
                                 tempo.agregarTemporada();
                                 break;
                             case 2:
-                                int dia_temp,mes_temp,anio_temp;
+                                int dia_temp,
+                                 mes_temp,
+                                 anio_temp;
                                 System.out.println("Ingrese la fecha actual: ");
                                 System.out.println("Ingrese el dia: ");
                                 dia_temp = leer.nextInt();
@@ -144,7 +144,7 @@ public class Menu {
                         System.out.println("3- Modificar Paquete");
                         System.out.println("4- Mostrar paquetes ");
                         System.out.println("5- Salir ");
-                        switch(leer.nextInt()){
+                        switch (leer.nextInt()) {
                             case 1:
                                 paquetes.agregarPaquete();
                                 break;
@@ -157,7 +157,7 @@ public class Menu {
                                 System.out.println("1. Modificar nombre del paquete");
                                 System.out.println("2. Modificar el precio del paquete");
                                 System.out.println("3. Agregar servicios al paquete");
-                                switch(leer.nextInt()){
+                                switch (leer.nextInt()) {
                                     case 1:
                                         System.out.println("Ingrese el nombre del paquete a cambiar: ");
                                         paquetes.cambiarNombrePaquete(leer.nextLine());
@@ -180,12 +180,17 @@ public class Menu {
                                 break;
                             default:
                                 System.out.println("Ingrese una opcion valida");
-                                break; 
+                                break;
                         }
                         break;
-                    default:
-                        System.out.println("Por favor ingrese una opcion valida");
+                    
+                    case 5:
+                        System.exit(0);
                         break;
+                    default:
+                        System.out.println("Ingrese una opcion valida");
+                        break;
+
                 }
             } catch (InputMismatchException e) {
                 System.err.println("Ingrese un numero valido porfavor...");
@@ -194,4 +199,3 @@ public class Menu {
         }
     }
 }
-
