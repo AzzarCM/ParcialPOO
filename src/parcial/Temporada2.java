@@ -13,14 +13,14 @@ import java.util.Scanner;
  * @author rodol
  */
 public class Temporada2 {
-    private ArrayList<Temporada> temporadaList;
+    private ArrayList<Temporada> temporadaList = new ArrayList<>();
     Temporada temporadita = new Temporada();
     Fecha FechaInicio = new Fecha();
     Fecha FechaFin = new Fecha();
     Scanner lectura= new Scanner(System.in);
     boolean banderita;
     
-    
+ 
     
     public void agregarTemporada(){
         Temporada tempo = new Temporada();

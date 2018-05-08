@@ -17,10 +17,8 @@ public class Menu {
    private static Menu menu;
    
 
-    private Menu() {
-       
+    private Menu(){  
     }
-
     public static Menu getInstance() {
         if (menu == null) {
             menu = new Menu();
@@ -30,12 +28,10 @@ public class Menu {
     
     public void opciones() {
         System.out.println("------------ Menu ------------");
-        System.out.println("1. Agregar Huesped");
-        System.out.println("1. Opciones para modificar Huesped");
-        System.out.println("2. Opciones para agregar/modificar reservaciones");
-        System.out.println("3. Opciones para agregar/modificar temporada del anio");
-        System.out.println("4. Opciones de agregar/modificar una reservacion");
-        System.out.println("5. Salir");
+        System.out.println("1. Menu de resevaciones");
+        System.out.println("2. Menu de temporadas");
+        System.out.println("3. Menu de Paquetes");
+        System.out.println("4. Salir");
     }
     
     
@@ -50,6 +46,7 @@ public class Menu {
         Habilitar_Habitacion room = new Habilitar_Habitacion();
         Temporada2 tempo = new Temporada2();
         String hab;
+        Paquetes paquetes = new Paquetes();
         
 
         while (opcion != 7) {
@@ -57,33 +54,7 @@ public class Menu {
             try {
                 opcion = leer.nextInt();
                 switch (opcion) {
-
                     case 1:
-                        System.out.println("------ BIENVENIDO A HUESPED --------");
-                        System.out.println("Que desea realizar?  \n");
-                        System.out.println("1. Agregar un Huesped");
-                        System.out.println("2. Eliminar un Huesped");
-                        System.out.println("3. Salir ");
-                        opcionHuesped = leer.nextInt();
-                        
-                        switch(opcionHuesped){
-                            case 1:
-                                System.out.println("Bienvenido a Agregar un huesped");
-                                hues.agregarhuesped();
-                                break;
-                            case 2:
-                                System.out.println("Bienvendio a Eliminar un Huesped");
-                                room.habilitarLiberarHabitacion(hues.eliminarhuesped());
-                                break;
-                                
-                            default:
-                                System.out.println("Ingrese una opcion valida por favor... ");    
-                                break;
-                        }
-                        break;
-
-                    case 2:
-
                         System.out.println("-------- BIENVENIDO A RESERVACON ---------");
                         System.out.println("Que desea hacer? ");
                         System.out.println("1- Agregar una reservacion ");
@@ -115,11 +86,10 @@ public class Menu {
                             default:
                                 System.out.println("No se puede");
                                 break;
-    
                         }
                         break;
 
-                    case 3:
+                    case 2:
 
                         System.out.println("-------- BIENVENIDO A TEMPORADA ---------");
                         System.out.println("Que desea hacer? ");
@@ -127,7 +97,7 @@ public class Menu {
                         System.out.println("2- Consultar temporada ");
                         System.out.println("3- Modificar temporada ");
                         System.out.println("4- Elimimar temporada ");
-                        System.out.println("6- Salir ");
+                        System.out.println("5- Salir ");
                         opcionTemporada = leer.nextInt();
                         switch(opcionTemporada){
                             case 1:
@@ -154,10 +124,44 @@ public class Menu {
                                 cod_tem = leer.nextLine();
                                 tempo.eliminarTemporada(cod_tem);
                                 break;
+                            case 5:
+                                System.exit(0);
+                                break;
+                            default:
+                                System.out.println("Ingrese una opcion valida");
+                                break;
+                        }
+                    case 3:
+                        System.out.println("-------- BIENVENIDO A PAQUETES ---------");
+                        System.out.println("Que desea hacer? ");
+                        System.out.println("1- Agregar paquete");
+                        System.out.println("2- Eliminar Paquete");
+                        System.out.println("3- Modificar Paquete");
+                        System.out.println("4- Mostrar paquetes ");
+                        System.out.println("5- Salir ");
+                        switch(leer.nextInt()){
+                            case 1:
+                                paquetes.agregarPaquete();
+                                break;
+                            case 2:
+                                System.out.println("Ingrese el nombre del paquete: ");
+                                paquetes.eliminarPaquete(leer.nextLine());
+                                break;
+                            case 3:
+                                System.out.println("Que desea modificar del paquete? ");
+                                System.out.println("1. Modificar nombre del paquete");
+                                System.out.println("2. Modificar el precio del paquete");
+                                System.out.println("3. Agregar servicios al paquete");
+                                switch(leer.nextInt()){
+                                    case 1:
+                                        System.out.println("Ingrese el nombre del paquete a cambiar: ");
+                                        paquetes.cambiarNombrePaquete(leer.nextLine());
+                                        break;
+                                }
+                                
+                                
                         }
                         break;
-                
-                        
                     default:
                         System.out.println("Por favor ingrese una opcion valida");
                         break;

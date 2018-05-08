@@ -14,18 +14,20 @@ import java.util.List;
  * @author DavidVallecios
  */
 public class Habilitar_Habitacion {
-   String Piso;
-   int numero;
-   boolean estado;
-   private ArrayList<ArrayList<Habitacion>> pisoList;
-   private ArrayList<Habitacion> habList;
-   List <String> codPiso;
-   String [] pisos = {"A","B","C","D","E","F"};
+   public String Piso;
+   public int numero;
+   public boolean estado;
+   public ArrayList<ArrayList<Habitacion>> pisoList;
+   public ArrayList<Habitacion> habList;
+   public List <String> codPiso;
+   public String [] pisos = {"A","B","C","D","E","F"};
    Scanner lectura = new Scanner(System.in);
    
 
    public Habilitar_Habitacion(){
        List <String> codPiso = new ArrayList<String>();
+       pisoList = new ArrayList<>();
+       habList = new ArrayList<>();
     }
    
    
@@ -41,9 +43,23 @@ public class Habilitar_Habitacion {
         else{
             hab.setTipo("Sencilla");
         }
+        System.out.println("Habitacion creada");
+        habList.add(hab);
         return hab;
     }
     
+
+    
+    
+    public void mostrarHab(){
+        for(Habitacion hab_aux : habList){
+            System.out.println("Habitacion: ");
+            System.out.println(hab_aux.getId_user());
+            System.out.println(hab_aux.getNumero());
+            System.out.println(hab_aux.getTipo());
+            System.out.println(hab_aux.getPiso());
+        }
+    }
     public void agregarPiso(){
         int aux;
         String pisoAux;
@@ -110,6 +126,7 @@ public class Habilitar_Habitacion {
     }
  
     public void habilitarLiberarHabitacion(int id_user){
+        System.out.println("Longitud del array: ");
         System.out.println(pisoList.size());
         for(ArrayList<Habitacion> auxPiso: pisoList){
             for(int i = 0; i<10; i++){

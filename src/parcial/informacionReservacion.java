@@ -19,7 +19,10 @@ public class informacionReservacion {
     
     private ArrayList<Reservacion> infoReserv;
     Scanner read = new Scanner(System.in);
-    Fecha nuevaFecha = new Fecha(), fechaAuxEntrada = new Fecha(),fechaAuxSalida = new Fecha();;
+    Fecha nuevaFecha = new Fecha(), fechaAuxEntrada = new Fecha(),fechaAuxSalida = new Fecha();
+    Habilitar_Habitacion liberar = new Habilitar_Habitacion();
+    
+    
     public informacionReservacion(){
         infoReserv = new ArrayList<>();
     }
@@ -45,6 +48,7 @@ public class informacionReservacion {
     
     public void AgregarReservacion(){
         Habilitar_Habitacion nueva = new Habilitar_Habitacion();
+        Habitacion auxHab = new Habitacion();
         Reservacion lista = new Reservacion();
         String piso;
         int nHab;
@@ -61,7 +65,8 @@ public class informacionReservacion {
         piso = read.nextLine();
         System.out.println("Ingrese el numero de habitacion: ");
         nHab = read.nextInt();
-        lista.setHabitacion(nueva.CrearHabitacion(nHab, piso, id_aux));
+        auxHab = nueva.CrearHabitacion(nHab, piso, id_aux);
+        lista.setHabitacion(auxHab);
         
         System.out.println("Ingrese la fecha de entrada del cliente por favor: \n");
         System.out.println("Ingrese el dia: ");
@@ -83,11 +88,12 @@ public class informacionReservacion {
         
         System.out.println("Ingrese el numero de tarjeta de credito del cliente \n");
         lista.setNumeroTarjeta(read.nextInt());
+        nueva.mostrarHab();
         
     }
     
     public void eliminarReservacion(){
-        Habilitar_Habitacion liberar = new Habilitar_Habitacion();
+        
         int id_aux;
         System.out.println("Ingrese el id del usuario a salir: ");
         id_aux = read.nextInt();
