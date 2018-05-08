@@ -82,7 +82,8 @@ public class Menu {
                                 reserv.consultarReservacion();
                                 break;
                             case 6:
-                                reserv.PrecioTotal();
+                                System.out.println("Ingrese el id del huesped: ");
+                                reserv.PrecioTotal(leer.nextInt());
                                break;
                             case 7:
                                 menu.mostrar();

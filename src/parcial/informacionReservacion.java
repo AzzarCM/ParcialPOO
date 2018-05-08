@@ -91,7 +91,8 @@ public class informacionReservacion {
         System.out.println("Desea algun paquete?: ");
         if(read.nextLine().equals("Y")){
             paq.mostrarPaquetes();
-            
+            System.out.println("Que paquete elegira: ");
+            lista.setPaquete(paq.PrecioPaquete(read.nextInt()-1)); 
         }
         System.out.println("Ingrese el numero de tarjeta de credito del cliente \n");
         lista.setNumeroTarjeta(read.nextInt());
@@ -127,17 +128,27 @@ public class informacionReservacion {
         }
     }
     
-    public void PrecioTotal(){
-        int acum=0;
+    public void PrecioTotal(int id_user){
+        Habilitar_Habitacion auxHab = new Habilitar_Habitacion();
+        int acum=0, aux = 0, precio_temp = 0, precioPaq=0;
+        double porcentaje_extra, precioFinal=0;
         for(int i = 0; i<infoReserv.size(); i++){
-            if(infoReserv.get(i).getFechaEntrada().getAnio() == infoReserv.get(i).getFechaSalida().getAnio()){
-                if(infoReserv.get(i).getFechaEntrada().getMes() == infoReserv.get(i).getFechaSalida().getMes()){
-                   acum += (infoReserv.get(i).getFechaSalida().getDia()-infoReserv.get(i).getFechaEntrada().getDia());
-                   
-                        
-                    }
+            if(infoReserv.get(i).getIdHuesped() == id_user){
+                if(infoReserv.get(i).getFechaEntrada().getAnio() == infoReserv.get(i).getFechaSalida().getAnio()){
+                    if(infoReserv.get(i).getFechaEntrada().getMes() == infoReserv.get(i).getFechaSalida().getMes()){
+                       acum += (infoReserv.get(i).getFechaSalida().getDia()-infoReserv.get(i).getFechaEntrada().getDia());
+                       System.out.println("Ingrese el piso de la habitacion: ");
+                       porcentaje_extra = auxHab.EnQuePisoEstoy(read.nextLine());
+                       precio_temp = auxHab.tipoHabi(id_user);
+                       precioPaq = infoReserv.get(i).getPaquete().getPrecioPaquete();
+                       precioFinal = (acum*precio_temp*porcentaje_extra)+(acum*precioPaq);
+                       break;
+                        }
                 }
             }
+
+            }
+        System.out.println("El precio final es: $" + String.valueOf(precioFinal));
         }
     
     public void modificarHabitacion(){
