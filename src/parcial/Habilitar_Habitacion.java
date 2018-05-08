@@ -29,6 +29,15 @@ public class Habilitar_Habitacion {
        pisoList = new ArrayList<>();
        habList = new ArrayList<>();
     }
+   public void mostrarHabitacionesC(){
+       System.out.println("Habitaciones disponibles");
+       for(Habitacion habs : habList){
+           
+           System.out.print(habs.getNumero() + "-" + habs.getPiso() + " ");
+           System.out.println("");
+       }
+      
+   }
    
    
     public Habitacion CrearHabitacion(int indice, String piso, int  id_user){
@@ -70,7 +79,7 @@ public class Habilitar_Habitacion {
         
         while(true){
             System.out.println("Ingrese el piso");
-            pisoAux = lectura.nextLine();
+            pisoAux = lectura.nextLine().toUpperCase();
             if(AnadiendoPisoArray(ValidarCodigoPiso(pisoAux))){
                 System.out.println("Intentelo de nuevo");
             }

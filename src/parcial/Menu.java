@@ -94,7 +94,7 @@ public class Menu {
 
                     case 2:
 
-                        System.out.println("-------- BIENVENIDO A TEMPORADA ---------");
+                        System.out.println("\n-------- BIENVENIDO A TEMPORADA ---------");
                         System.out.println("Que desea hacer? ");
                         System.out.println("1- Agregar temporada  ");
                         System.out.println("2- Consultar temporada ");

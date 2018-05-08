@@ -29,20 +29,26 @@ public class informacionReservacion {
     }
     
     public boolean consultarReservacion(){
-        int id_user;
-        System.out.println("Ingrese el id del usuario a buscar: ");
-        id_user = read.nextInt();
+        int id_user,numHab;
+        String piso;
+        System.out.println("Ingrese el numero de habitacion: ");
+        //id_user = read.nextInt();
+        numHab = read.nextInt();
+        System.out.println("Ingrese el numero de piso ");
+        piso = read.nextLine();
 
         
         
         for(int i=0; i<infoReserv.size(); i++){
             
-            if(infoReserv.get(i).getIdHuesped() == id_user){
+            if(infoReserv.get(i).getHab().getNumero() == numHab && infoReserv.get(i).getHab().getPiso().equals(piso)){
+                System.out.println("Esta ocupada ");
                 
                 return true;
             }
           
         }
+        System.out.println("No esta ocupada");
         return false;  
         
     }
@@ -107,21 +113,12 @@ public class informacionReservacion {
             read.nextLine();
         }
         System.out.println("Ingrese el numero de tarjeta de credito del cliente \n");
-        System.out.println("La tarjeta de Credito consta de 4 digitos... \n");
+        //System.out.println("La tarjeta de Credito consta de 4 digitos... \n");
+        num_tarjeta = read.nextInt();
+        lista.setNumeroTarjeta(num_tarjeta);
+      
+             
         
-        try {
-            num_tarjeta = read.nextInt();
-            if (num_tarjeta == 4) {
-
-                lista.setNumeroTarjeta(num_tarjeta);
-            }
-            else{
-                System.out.println("Los digitos ingresados no poseen 4 digitos");
-            }
-        } catch (InputMismatchException err) {
-            System.err.println("Ingrese un numero de 4 dijitos ");
-            read.nextInt();
-        }
         nueva.mostrarHab();
 
     }
