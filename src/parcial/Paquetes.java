@@ -39,6 +39,7 @@ public class Paquetes {
             }
         }
         nuevo_paq.setServicioPaquete(servicios);
+        paquetes.add(nuevo_paq);
     }
     
     public void modificarPrecio(String nombrePaq){
@@ -89,6 +90,14 @@ public class Paquetes {
         }
     }
     
+    public void CrearPaqueteExistente(String name, int precio, ArrayList<String> service){
+        Paq nuevo_paq = new Paq();
+        nuevo_paq.setNombrePaquete(name);
+        nuevo_paq.setPrecioPaquete(precio);
+        nuevo_paq.setServicioPaquete(service);
+        paquetes.add(nuevo_paq);
+        
+    }
     public Paq PrecioPaquete(int indice){
         return paquetes.get(indice);
     }

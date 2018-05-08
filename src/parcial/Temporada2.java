@@ -18,7 +18,7 @@ public class Temporada2 {
     Fecha FechaInicio = new Fecha();
     Fecha FechaFin = new Fecha();
     Scanner lectura= new Scanner(System.in);
-    boolean banderita;
+    boolean banderita = true;
     
  
     
@@ -80,13 +80,15 @@ public class Temporada2 {
                 while(FechaInicio.getDia() <= 30 && banderita){
                     System.out.println("Ingrese un mes con 30 dias: ");
                     FechaInicio.setMes(lectura.nextInt());
-                    if( FechaInicio.getMes() == 4 || FechaInicio.getMes() == 6 || FechaInicio.getMes() == 7 || FechaInicio.getMes() == 11 ){
+                    if( FechaInicio.getMes() == 4 || FechaInicio.getMes() == 6 || FechaInicio.getMes() == 7 || FechaInicio.getMes() == 9 || FechaInicio.getMes() == 11 ){
                         banderita = false;
                         break;
                     }
                     System.out.println("Ese mes no existe o no tiene 30 dias. ");
                 }
+                break;
             }
+            
 
         }
     }
@@ -121,13 +123,15 @@ public class Temporada2 {
                 while(FechaFin.getDia() <= 30 && banderita){
                     System.out.println("Ingrese un mes con 30 dias: ");
                     FechaFin.setMes(lectura.nextInt());
-                    if( FechaFin.getMes() == 4 || FechaFin.getMes() == 6 || FechaFin.getMes() == 7 || FechaFin.getMes() == 11 ){
+                    if( FechaFin.getMes() == 4 || FechaFin.getMes() == 6 || FechaFin.getMes() == 7 || FechaInicio.getMes() == 9 || FechaFin.getMes() == 11 ){
                         banderita = false;
                         break;
                     }
                     System.out.println("Ese mes no existe o no tiene 30 dias. ");
                 }
+                break;
             }
+            
             
             
            

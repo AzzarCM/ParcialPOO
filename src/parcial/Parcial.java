@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package parcial;
+import java.util.ArrayList;
 
 /**
  *
@@ -16,6 +17,21 @@ public class Parcial {
      */
     public static void main(String[] args) {
         Habilitar_Habitacion hab = new Habilitar_Habitacion();
+        
+        ArrayList <String> premium = new ArrayList<>();
+        ArrayList <String> basico = new ArrayList<>();
+          premium.add("Buffet de desayuno");
+          premium.add("Acceso ilimitado a piscina");
+          premium.add("Acceso ilimitado a minibar");
+          premium.add("Acceso ilimitado a internet");
+          premium.add("Servicio a habitacion");
+          basico.add("Acceso a la piscina");
+          basico.add("Acceso ilimitado a internet");
+          
+        
+        Paquetes paq = new Paquetes();
+        paq.CrearPaqueteExistente("Premium", 150 , premium);
+        paq.CrearPaqueteExistente("Basico ", 10, basico);
         hab.CrearHabitacion(1,"A", 0);
         hab.CrearHabitacion(2,"A", 0);
         hab.CrearHabitacion(3,"A", 0);
