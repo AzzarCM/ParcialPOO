@@ -148,6 +148,26 @@ public class Habilitar_Habitacion {
             
         }
     }
+    
+    public double EnQuePisoEstoy(String piso){
+        int flag = 0;
+        for(int j = 0; j<pisoList.size()-2; j++){
+            for(int i = 0; i<10; i++){
+               if(pisoList.get(j).get(i).getPiso().equals(piso)){
+                   flag = 2;
+                   break;
+               }
+            }
+        }
+        if(flag == 0){
+            return 0.10;
+        }
+        else{
+            return 1;
+        }
+    }
+    
+    
     public void habilitarPiso(String piso){
         for(ArrayList<Habitacion> auxPiso: pisoList){
             for(int i = 1; i<11; i++){

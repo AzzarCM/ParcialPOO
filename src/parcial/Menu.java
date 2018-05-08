@@ -37,7 +37,7 @@ public class Menu {
     
     public void mostrar(){
          Scanner leer = new Scanner(System.in);
-        int opcion = 4;
+        int opcion = 4, precioTotal;
         int opcionHuesped, opcionReservacion, opcionTemporada;
         String dato, cod_temp="";
         Fecha ConsulTemp = new Fecha();
@@ -62,7 +62,8 @@ public class Menu {
                         System.out.println("3- Ver reservaciones ");
                         System.out.println("4- Modificar Reservacion ");
                         System.out.println("5- Consultar Reservacion ");
-                        System.out.println("6- regresar ");
+                        System.out.println("6- Precio total");
+                        System.out.println("7- regresar ");
                         opcionReservacion = leer.nextInt();
                         switch(opcionReservacion){
                             case 1:
@@ -81,6 +82,9 @@ public class Menu {
                                 reserv.consultarReservacion();
                                 break;
                             case 6:
+                                reserv.PrecioTotal();
+                               break;
+                            case 7:
                                 menu.mostrar();
                                 break;
                             default:
@@ -157,9 +161,25 @@ public class Menu {
                                         System.out.println("Ingrese el nombre del paquete a cambiar: ");
                                         paquetes.cambiarNombrePaquete(leer.nextLine());
                                         break;
+                                    case 2:
+                                        System.out.println("Ingrese el nombre del paquete a modificar el precio: ");
+                                        paquetes.modificarPrecio(leer.nextLine());
+                                        break;
+                                    case 3:
+                                        System.out.println("Ingrese el nombre del paquete a agregar servicios: ");
+                                        paquetes.agregarServicios(leer.nextLine());
+                                        break;
+                                    default:
+                                        System.out.println("Ingrese una opcion valida");
+                                        break;
                                 }
-                                
-                                
+                                break;
+                            case 4:
+                                paquetes.mostrarPaquetes();
+                                break;
+                            default:
+                                System.out.println("Ingrese una opcion valida");
+                                break; 
                         }
                         break;
                     default:

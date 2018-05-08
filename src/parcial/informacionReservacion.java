@@ -48,6 +48,7 @@ public class informacionReservacion {
     
     public void AgregarReservacion(){
         Habilitar_Habitacion nueva = new Habilitar_Habitacion();
+        Paquetes paq = new Paquetes();
         Habitacion auxHab = new Habitacion();
         Reservacion lista = new Reservacion();
         String piso;
@@ -66,7 +67,7 @@ public class informacionReservacion {
         System.out.println("Ingrese el numero de habitacion: ");
         nHab = read.nextInt();
         auxHab = nueva.CrearHabitacion(nHab, piso, id_aux);
-        lista.setHabitacion(auxHab);
+        lista.setHab(auxHab);
         
         System.out.println("Ingrese la fecha de entrada del cliente por favor: \n");
         System.out.println("Ingrese el dia: ");
@@ -86,6 +87,12 @@ public class informacionReservacion {
         fechaAuxSalida.setAnio(read.nextInt());
         lista.setFechaSalida(fechaAuxSalida);
         
+        
+        System.out.println("Desea algun paquete?: ");
+        if(read.nextLine().equals("Y")){
+            paq.mostrarPaquetes();
+            
+        }
         System.out.println("Ingrese el numero de tarjeta de credito del cliente \n");
         lista.setNumeroTarjeta(read.nextInt());
         nueva.mostrarHab();
@@ -112,13 +119,26 @@ public class informacionReservacion {
         System.out.println("Las reservaciones que hay son: ");
         for(int i = 0; i < infoReserv.size(); i++){
             System.out.println("Numero de Habitacion : ");
-            System.out.println(infoReserv.get(i).getHabitacion().getNumero());
+            System.out.println(infoReserv.get(i).getHab().getNumero());
             System.out.println("Piso : ");
-            System.out.println(infoReserv.get(i).getHabitacion().getPiso());
+            System.out.println(infoReserv.get(i).getHab().getPiso());
             System.out.println("Id Huesped: ");
             System.out.println(infoReserv.get(i).getIdHuesped());
         }
     }
+    
+    public void PrecioTotal(){
+        int acum=0;
+        for(int i = 0; i<infoReserv.size(); i++){
+            if(infoReserv.get(i).getFechaEntrada().getAnio() == infoReserv.get(i).getFechaSalida().getAnio()){
+                if(infoReserv.get(i).getFechaEntrada().getMes() == infoReserv.get(i).getFechaSalida().getMes()){
+                   acum += (infoReserv.get(i).getFechaSalida().getDia()-infoReserv.get(i).getFechaEntrada().getDia());
+                   
+                        
+                    }
+                }
+            }
+        }
     
     public void modificarHabitacion(){
         int numHab;
@@ -145,10 +165,10 @@ public class informacionReservacion {
           
                         for (int i = 0; i < infoReserv.size(); i++) {
 
-                            if (infoReserv.get(i).getHabitacion().equals(nuevaHabitacion) && habitacion.getEstado()) {
+                            if (infoReserv.get(i).getHab().equals(nuevaHabitacion) && habitacion.getEstado()) {
                                 
 
-                                infoReserv.get(i).getHabitacion().setEstado(true);
+                                infoReserv.get(i).getHab().setEstado(true);
                                 habitacion.setEstado(false);
                                 break;
                             }

@@ -21,10 +21,11 @@ public class Reservacion {
     Fecha fechaEntrada,fechaSalida;
     double montoTotal;
     String nombre;
+    Paq paquete;
     Habitacion hab;
     
-    public void Reservacion(String nombre, Fecha fechaEntrada, int numeroTarjeta, double montoTotal, int idPaquete, Habitacion hab,
-            int idHuesped){
+    public void Reservacion(String nombre, Fecha fechaEntrada, Fecha fechaSalida, int numeroTarjeta, double montoTotal, int idPaquete, Habitacion hab,
+            int idHuesped, Paq paquete){
         
         this.fechaEntrada = fechaEntrada;
         this.numeroTarjeta = numeroTarjeta;
@@ -34,9 +35,28 @@ public class Reservacion {
         this.hab = hab;
         this.fechaSalida = fechaSalida;
         this.nombre = nombre;
+        this.paquete = paquete;
         
     
     }
+
+    public Paq getPaquete() {
+        return this.paquete;
+    }
+
+    public void setPaquete(Paq paquete) {
+        this.paquete = paquete;
+    }
+
+    public Habitacion getHab() {
+        return this.hab;
+    }
+
+    public void setHab(Habitacion hab) {
+        this.hab = hab;
+    }
+    
+    
     
     public void eliminarReservacion(Habitacion hab){
         this.hab = hab;
@@ -106,13 +126,6 @@ public class Reservacion {
         this.montoTotal = montoTotal;
     }
 
-    public Habitacion getHabitacion() {
-        return hab;
-    }
-
-    public void setHabitacion(Habitacion hab) {
-        this.hab = hab;
-    }
     
     
     
