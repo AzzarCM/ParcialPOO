@@ -61,7 +61,7 @@ public class Temporada2 {
                     System.out.println("Ingrese un mes con 31 dias: ");
                     FechaInicio.setMes(lectura.nextInt());
                     if( FechaInicio.getMes() == 1 || FechaInicio.getMes() == 3 || FechaInicio.getMes() == 5 || FechaInicio.getMes() == 7 || FechaInicio.getMes() == 8 || FechaInicio.getMes() == 10 || FechaInicio.getMes() == 12){
-                        banderita = true;
+                        banderita = false;
                         break;
                     }
                     System.out.println("Ese mes no existe o no tiene 31 dias. ");

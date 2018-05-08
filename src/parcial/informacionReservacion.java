@@ -35,14 +35,12 @@ public class informacionReservacion {
         //id_user = read.nextInt();
         numHab = read.nextInt();
         System.out.println("Ingrese el numero de piso ");
-        piso = read.nextLine();
-
-        
-        
+        piso = read.nextLine(); 
         for(int i=0; i<infoReserv.size(); i++){
             
             if(infoReserv.get(i).getHab().getNumero() == numHab && infoReserv.get(i).getHab().getPiso().equals(piso)){
-                System.out.println("Esta ocupada ");
+                
+                System.out.println("La Habitacion esta ocupada por:  " + infoReserv.get(i).getIdHuesped() + " Dui");
                 
                 return true;
             }

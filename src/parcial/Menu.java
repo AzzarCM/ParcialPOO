@@ -61,7 +61,7 @@ public class Menu {
                         System.out.println("4- Modificar Reservacion ");
                         System.out.println("5- Consultar Reservacion ");
                         System.out.println("6- Precio total");
-                        System.out.println("7- regresar ");
+                        System.out.println("7- Salir a menu Principal ");
                         opcionReservacion = leer.nextInt();
                         switch (opcionReservacion) {
                             case 1:
@@ -100,7 +100,7 @@ public class Menu {
                         System.out.println("2- Consultar temporada ");
                         System.out.println("3- Modificar temporada ");
                         System.out.println("4- Elimimar temporada ");
-                        System.out.println("5- Salir ");
+                        System.out.println("5- Salir a menu Principal ");
                         opcionTemporada = leer.nextInt();
                         switch (opcionTemporada) {
                             case 1:
@@ -130,7 +130,7 @@ public class Menu {
                                 tempo.eliminarTemporada(cod_tem);
                                 break;
                             case 5:
-                                System.exit(0);
+                                menu.mostrar();
                                 break;
                             default:
                                 System.out.println("Ingrese una opcion valida");
@@ -143,7 +143,7 @@ public class Menu {
                         System.out.println("2- Eliminar Paquete");
                         System.out.println("3- Modificar Paquete");
                         System.out.println("4- Mostrar paquetes ");
-                        System.out.println("5- Salir ");
+                        System.out.println("5- Salir a menu Principal ");
                         switch (leer.nextInt()) {
                             case 1:
                                 paquetes.agregarPaquete();
@@ -178,13 +178,16 @@ public class Menu {
                             case 4:
                                 paquetes.mostrarPaquetes();
                                 break;
+                            case 5:
+                                menu.mostrar();
                             default:
                                 System.out.println("Ingrese una opcion valida");
                                 break;
                         }
                         break;
                     
-                    case 5:
+                    case 4:
+                        System.out.println("Hasta la proxima.. ");
                         System.exit(0);
                         break;
                     default:

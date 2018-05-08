@@ -52,7 +52,7 @@ public class Habilitar_Habitacion {
         else{
             hab.setTipo("Sencilla");
         }
-        System.out.println("Habitacion creada");
+        //System.out.println("Habitacion creada");
         habList.add(hab);
         return hab;
     }
